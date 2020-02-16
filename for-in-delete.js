@@ -11,13 +11,13 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
 // for(var key in values) {
 //   console.log(values[key])
@@ -39,9 +39,14 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  //Code Here
+function showValues( values ) {
+  str = ""
+  for(let key in values){
+    str += values[key];
+  }
+  return str
 }
+// console.log(showValues(values))
 
 
 
@@ -53,8 +58,22 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+let nums = {
+  num1: 3,
+  num2: 7,
+  num3: 43
+}
 
+function greaterThan10(object){
+  
+  for (let key in object){
+    if (object[key] > 10){
+      object[key] = 0
+    }
+  }
+    return object
+}
+// console.log(greaterThan10(nums))
 
 
 ////////// PROBLEM 3 //////////
@@ -65,8 +84,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double(object){
+  for(let key in object){
+    object[key] *= 2
+  }
+  return object
+}
 
+// console.log(double(nums))
 
 
 ////////// PROBLEM 4 //////////
@@ -79,9 +104,23 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+shush = {
+  shush1: 'she',
+  word2: 'sells',
+  shush3: ' seashells'
+}
 
+function secrets(object){
+  secrets = ""
+  for(let key in object){
+    if(key.startsWith('sh')){
+      secrets += object[key]
+    }
+  }
+  return secrets
+}
 
+// console.log(secrets(shush))
 
 /* 
   Sometimes it's needed to delete object properties. 
@@ -110,7 +149,14 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+function removePassword(object){
+  for(let key in object){
+    if (key === 'password'){
+      delete object[key]
+    }
+  }
+  return object
+}
 
 
 
@@ -129,7 +175,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
+for(let key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key]
+  }
+}
 
 
 
@@ -142,7 +192,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+function startsWithK(object){
+  for(let key in object){
+    if(key.startsWith('k')){
+      delete object[key]
+    }
+  }
+  return object
+}
 
 
 
@@ -157,6 +214,20 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+booty = {
+  chest1: 'treasure',
+  chest2: 'rug',
+  chest3: 'treasure again'
+}
 
+function hiddenTreasure(object){
+  for(let key in object){
+    if(!object[key].includes('treasure')){
+      delete object[key]
+    } 
+  }
+  return object
+}
+
+console.log(hiddenTreasure(booty))
 

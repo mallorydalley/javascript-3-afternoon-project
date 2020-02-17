@@ -52,10 +52,10 @@ var employees = [
 
 function employeeUpdater(){
   for(let i = 0; i < employees.length; i++){
-    for(let key in i){
-      if(i.key === 'Theo'){
-        delete key
-      }
+    for(let key in employees[i]){
+      // if(employees[i] === ('Theo')){
+      //   delete employees[i]
+      // }
     }
   }
   
@@ -80,7 +80,18 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(array){
+  for(let i = 0; i < array.length; i++){
+    for(let j = array.length -1; j > i; j--){
+      if (array[i]===array[j]){
+         array.splice(j,1);
+      }
+    }
+  }
+  return array
+}
+
+// console.log(removeDuplicates(workplaceAccidents))
 
 
 
@@ -109,8 +120,11 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
+
+// console.log(grumpyActivity);
+// console.log(fluffy2ndFriend);
 
 
 
@@ -150,9 +164,16 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(myCar){
+  for(let key in myCar){
+    for(let i = 0; i < myCar['accidents'].length; i++){
+      myCar['accidents'][i].atFaultForAccident = false
+    }
+  }
+  return myCar
+}
 
-
+clean = (recordCleaner(myCar))
 
 ////////// PROBLEM 5 //////////
 
@@ -169,6 +190,21 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper(numsArr){
+  
+  for(let i = 0; i < numsArr.length; i++){
+    for (let j = 0; j < numsArr[i].length; j++){
+      if(numsArr[i][j] % 2 === 0){
+        numsArr[i].splice(j, 1, 'even')
+      } else {
+        numsArr[i].splice(j, 1, 'odd')
+      }
+      
+    }
+  }
+  return numsArr
+}
 
+//CHECK FUNCTION
+// console.log(looper(numsArr))
 

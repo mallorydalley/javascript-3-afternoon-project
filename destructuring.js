@@ -96,14 +96,20 @@ function ingredients(obj){
   Find the smallest number of the three and return that number.
 */
 
-function largeNumbers({ first, second, third}){
-  if(first < second){
-    return first
-  } else if {
-    
-  }
-}
 
+function largeNumbers({first, second, third}){
+  // smallest = [first]  
+  
+  // if(second < smallest[0]){
+  //     smallest.splice(0, 1, second)
+  //   } else if (third < smallest[0]){
+  //     smallest.splice(0, 1, third)
+  //   } else {
+  //     smallest
+  //   }
+
+  }
+console.log(largeNumbers)
 
 
 ////////// PROBLEM 6 //////////
@@ -115,7 +121,7 @@ function largeNumbers({ first, second, third}){
 */
 
 function numberGroups({a, b, c}){
-
+  
 }
 
 

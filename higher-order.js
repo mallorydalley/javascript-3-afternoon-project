@@ -48,6 +48,13 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
+// const postTaxPrices = prices.map(function(ele){
+//   let tax = ele * 1.07
+//   return ele + tax
+// })
+// console.log(postTaxPrices)
+
+
 //Code Here
 // let postTaxPrices = prices.map(function(ele){
 //   return ele * 1.07
@@ -141,9 +148,17 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 
 
-let bobsTotal = purchases.map(val => val.price);
+// let totalPrice = purchases.map(val => val.price);
 
-let totalPrice = bobsTotal.reduce((total, curr) => total + curr)
+// let bobsTotal = totalPrice.reduce((total, curr) => total + curr)
 
-console.log(totalPrice)
+// console.log(bobsTotal)
 
+let bobsTotal = purchases.reduce((acc, curr) => {
+  if(curr.owner === 'Bob'){
+    acc += curr.price
+  }
+  return acc
+}, 0)
+
+console.log(bobsTotal)

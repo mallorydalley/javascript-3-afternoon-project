@@ -21,6 +21,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
+
+
 const {color, make, model, year} = carDetails
 
 
@@ -71,8 +73,9 @@ function totalPopulation(obj){
   Push these new variables to an array and return the array. 
 */
 
+
 function ingredients(obj){
-  let newArray = []
+  const newArray = []
   const {carb, fat, protein} = obj
   newArray.push(carb, fat, protein)
 
